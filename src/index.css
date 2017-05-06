@@ -1,0 +1,101 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.login button {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+.toolbar {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toolbar-label {
+  font-weight: bold;
+}
+
+.rbc-calendar {
+  padding: 10px;
+  padding-top: 0;
+  width: 100%;
+}
+
+ .rbc-event {
+  padding: 0;
+  background-color: white;
+}
+
+.rbc-event div {
+  height: 100%;
+}
+
+.rbc-event .fitting {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: lightblue;
+  border-color: lightblue !important;
+  text-align: center;
+}
+
+.rbc-event .balance {
+  padding-bottom: 3px;
+  padding-top: 3px;
+  background-color:navy;
+  border-color: navy !important;
+  text-align: center;
+}
+
+.rbc-event .both {
+  padding-bottom: 3px;
+  padding-top: 3px;
+  background-color: orangered;
+  border-color: orangered !important;
+  text-align: center;
+}
+
+.rbc-event-label {
+  display: none;
+}
+
+.ant-popover {
+  z-index: 500;
+}
+
+.ant-row {
+  padding: 10px;
+}
+
+.text {
+  text-align: right;
+  padding: 5px;
+}
+
+.time {
+  padding-left: 5px;
+}
+
+.ant-time-picker {
+  width: 100%;
+}
+
+.ant-card {
+  margin-top: 25px;
+}
+
+.qty-select {
+  width: 100%;
+}
