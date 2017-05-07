@@ -75649,6 +75649,13 @@
 	      });
 	    }, _this.handleInput = function (e) {
 	      return _this.setState(_defineProperty({}, e.target.name, e.target.value));
+	    }, _this.handleStartTime = function (time) {
+	      return _this.setState({
+	        start: time,
+	        end: time
+	      });
+	    }, _this.handleEndTime = function (time) {
+	      return _this.setState({ end: time });
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 	
@@ -75709,7 +75716,7 @@
 	            { span: 8 },
 	            _react2.default.createElement(_timePicker2.default, {
 	              value: start,
-	              onChange: this.handleTime,
+	              onChange: this.handleStartTime,
 	              format: format
 	            })
 	          ),
@@ -75718,7 +75725,7 @@
 	            { span: 8, className: 'time' },
 	            _react2.default.createElement(_timePicker2.default, {
 	              value: end,
-	              onChange: this.handleTime,
+	              onChange: this.handleEndTime,
 	              format: format
 	            })
 	          )
@@ -77571,6 +77578,13 @@
 	      var router = _this.props.router;
 	
 	      router.replace('/');
+	    }, _this.handleStartTime = function (time) {
+	      return _this.setState({
+	        start: time,
+	        end: time
+	      });
+	    }, _this.handleEndTime = function (time) {
+	      return _this.setState({ end: time });
 	    }, _temp), _possibleConstructorReturn(_this, _ret);
 	  }
 	
@@ -77662,7 +77676,7 @@
 	            { span: 8 },
 	            _react2.default.createElement(_timePicker2.default, {
 	              value: start,
-	              onChange: this.handleTime,
+	              onChange: this.handleStartTime,
 	              format: format
 	            })
 	          ),
@@ -77671,7 +77685,7 @@
 	            { span: 8, className: 'time' },
 	            _react2.default.createElement(_timePicker2.default, {
 	              value: end,
-	              onChange: this.handleTime,
+	              onChange: this.handleEndTime,
 	              format: format
 	            })
 	          )

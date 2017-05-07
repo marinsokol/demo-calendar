@@ -73,6 +73,14 @@ export default class extends PureComponent {
     [e.target.name]: e.target.value,
   })
 
+  handleStartTime = time =>
+    this.setState({
+      start: time,
+      end: time,
+    })
+
+  handleEndTime = time => this.setState({ end: time })
+
   render() {
     const { title, description, start, end } = this.state;
 
@@ -98,14 +106,14 @@ export default class extends PureComponent {
         <Col span={8}>
           <TimePicker
             value={start}
-            onChange={this.handleTime}
+            onChange={this.handleStartTime}
             format={format}
           />
         </Col>
         <Col span={8} className="time">
           <TimePicker
             value={end}
-            onChange={this.handleTime}
+            onChange={this.handleEndTime}
             format={format}
           />
         </Col>

@@ -4,7 +4,6 @@ import shallowCompare from 'react-addons-shallow-compare';
 import {
   Popover,
   Button,
-  Checkbox,
   Modal,
 } from 'antd';
 import { deleteEvent } from '../../../utils/setFirebase';
