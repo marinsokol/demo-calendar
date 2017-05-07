@@ -1,5 +1,6 @@
 import store from 'store';
 import { database, auth } from 'firebase';
+import { messages } from '../constants/messages';
 
 export const login = ({ email, password }) =>
   auth()
@@ -16,7 +17,7 @@ export const saveEvent = event =>
     .ref('/')
     .once('value')
     .then((snapshot) => {
-      const events = snapshot.val();
+      const events = (snapshot.val()) ? snapshot.val() : {};
       let flag = false;
       Object.values(events).forEach((single) => {
         if (new Date(event.start) >= new Date(single.start) &&
@@ -27,14 +28,14 @@ export const saveEvent = event =>
         }
       });
 
-      if (flag) return 'Event exists';
+      if (flag) return messages.eventError;
 
       database()
         .ref(`/${event.uid}`)
         .set({
           ...event,
         });
-      return 'Ugradnja spremljena';
+      return messages.eventSaved;
     });
 
 export const deleteEvent = event =>

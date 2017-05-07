@@ -29,7 +29,7 @@ export default class extends PureComponent {
         router.replace('/login');
       }).catch(() =>
         notification.error({
-          message: 'Neuspiješna odjava',
+          message: messages.logoutErr,
         })
       );
   }

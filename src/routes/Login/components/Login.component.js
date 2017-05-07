@@ -42,8 +42,8 @@ export default class extends PureComponent {
       .catch(() => {
         this.setState({ submit: false });
         notification.error({
-          message: 'Neuspiješna prijava',
-          description: 'Neispravan email ili lozinka.',
+          message: messages.loginErrTitle,
+          description: messages.loginErrDesc,
         });
       });
   }
@@ -70,9 +70,9 @@ export default class extends PureComponent {
     }
 
     return (<div className="main-wrap login">
-      <Card title="Prijava" style={{ width: 400 }}>
+      <Card title={messages.login} style={{ width: 400 }}>
         <Row>
-          <p>E-mail</p>
+          <p>{messages.email}</p>
           <Input
             name="email"
             value={email}
@@ -80,7 +80,7 @@ export default class extends PureComponent {
           />
         </Row>
         <Row>
-          <p>Lozinka</p>
+          <p>{messages.password}</p>
           <Input
             name="password"
             type="password"

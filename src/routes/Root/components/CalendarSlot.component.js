@@ -30,24 +30,8 @@ export default class extends PureComponent {
     const { event } = this.props;
 
     return (<div>
-      <p>Ime i prezime: {event.title}</p>
-      <p>Mobitel: {event.phone}</p>
-      <p>Vozilo: {event.vehicle}</p>
-      <p>Registracija: {event.registration}</p>
-      <p>
-        Ugradnja:&nbsp;
-        <Checkbox
-          checked={event.fitting}
-          disabled
-        />
-      </p>
-      <p>
-        Balansiranje:&nbsp;
-        <Checkbox
-          checked={event.balance}
-          disabled
-        />
-      </p>
+      <p>{messages.fullName}: {event.title}</p>
+      <p>{messages.desc}: {event.description.slice(0, 10)}</p>
       <p>
         <Button
           onClick={this.handleUpdateEvent}
@@ -55,7 +39,7 @@ export default class extends PureComponent {
           type="primary"
           ghost
         >
-          Uredi
+          {messages.update}
         </Button>
         <Button
           onClick={this.handleDeleteModal}
@@ -63,7 +47,7 @@ export default class extends PureComponent {
           type="danger"
           ghost
         >
-          Izbriši
+          {messages.delete}
         </Button>
       </p>
     </div>);
@@ -84,36 +68,28 @@ export default class extends PureComponent {
   }
 
   render() {
-    const { title, event } = this.props;
+    const { title } = this.props;
     const { modal } = this.state;
     const content = this.getPopoverContent();
-    let cssClass = '';
-    if (event.fitting && event.balance) {
-      cssClass = 'both';
-    } else if (event.fitting) {
-      cssClass = 'fitting';
-    } else if (event.balance) {
-      cssClass = 'balance';
-    }
 
     return (<div>
       <Popover
         content={content}
         title={title}
       >
-        <div className={cssClass}>
+        <div>
           {title}
         </div>
       </Popover>
       <Modal
-        title="Izbriši"
+        title={messages.delete}
         visible={modal}
         onOk={this.handleDeleteEvent}
         onCancel={this.handleCancel}
         okText={messages.delete}
         cancelText={messages.cancle}
       >
-        Jeste li sigurni da želite izbrisati?
+        {messages.deleteMessage}
       </Modal>
     </div>);
   }

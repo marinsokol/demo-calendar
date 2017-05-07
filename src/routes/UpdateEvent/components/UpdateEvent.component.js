@@ -55,7 +55,7 @@ export default class extends PureComponent {
 
     if (Object.keys(event).length === 1 && event[params.uid] === 'empty') {
       notification.error({
-        message: 'Ne postoji ugradnja ili balansiranje',
+        message: messages.emptyEvent,
       });
     } else if (Object.keys(event).length > 0) {
       this.setState({
@@ -72,7 +72,7 @@ export default class extends PureComponent {
     const { start, end, title, description } = this.state;
     if (!title || !description) {
       notification.error({
-        message: 'Fill empty inputs',
+        message: messages.emptyInputs,
       });
       return;
     }
@@ -86,7 +86,7 @@ export default class extends PureComponent {
 
     saveEvent(event)
       .then((message) => {
-        if (message === 'Event exists') {
+        if (message === messages.eventError) {
           notification.error({ message });
         } else {
           notification.info({ message });
@@ -104,7 +104,7 @@ export default class extends PureComponent {
     const { title, start, end, description } = this.state;
 
     return (<Modal
-      title="Uredi"
+      title={messages.updateEvent}
       visible={this.state.visible}
       onOk={this.handleOk}
       onCancel={this.handleCancle}
@@ -112,7 +112,7 @@ export default class extends PureComponent {
       cancelText={messages.cancle}
     >
       <Row>
-        <Col span={8} className="text">Date:</Col>
+        <Col span={8} className="text">{messages.date}:</Col>
         <Col span={16}>
           <Input
             disabled={this.state.visible}
@@ -121,7 +121,7 @@ export default class extends PureComponent {
         </Col>
       </Row>
       <Row>
-        <Col span={8} className="text">Time:</Col>
+        <Col span={8} className="text">{messages.time}:</Col>
         <Col span={8}>
           <TimePicker
             value={start}
@@ -131,14 +131,14 @@ export default class extends PureComponent {
         </Col>
         <Col span={8} className="time">
           <TimePicker
-            disabled={this.state.visible}
             value={end}
+            onChange={this.handleTime}
             format={format}
           />
         </Col>
       </Row>
       <Row>
-        <Col span={8} className="text">Full name:</Col>
+        <Col span={8} className="text">{messages.fullName}:</Col>
         <Col span={16}>
           <Input
             name="title"
@@ -148,7 +148,7 @@ export default class extends PureComponent {
         </Col>
       </Row>
       <Row>
-        <Col span={8} className="text">Description:</Col>
+        <Col span={8} className="text">{messages.desc}:</Col>
         <Col span={16}>
           <Input
             type="textarea"

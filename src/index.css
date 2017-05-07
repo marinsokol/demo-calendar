@@ -34,39 +34,6 @@
   width: 100%;
 }
 
- .rbc-event {
-  padding: 0;
-  background-color: white;
-}
-
-.rbc-event div {
-  height: 100%;
-}
-
-.rbc-event .fitting {
-  padding-top: 3px;
-  padding-bottom: 3px;
-  background-color: lightblue;
-  border-color: lightblue !important;
-  text-align: center;
-}
-
-.rbc-event .balance {
-  padding-bottom: 3px;
-  padding-top: 3px;
-  background-color:navy;
-  border-color: navy !important;
-  text-align: center;
-}
-
-.rbc-event .both {
-  padding-bottom: 3px;
-  padding-top: 3px;
-  background-color: orangered;
-  border-color: orangered !important;
-  text-align: center;
-}
-
 .rbc-event-label {
   display: none;
 }
