@@ -2,9 +2,10 @@
 
 ## Demo
 Visit [this web site](https://fir-calendar-c4652.firebaseapp.com/)
+
 Login with:
-email -> demo@demo.com
-password -> demo1234
+    email -> demo@demo.com
+    password -> demo1234
 
 ## Running locally
 Make sure you have Node 6 or later installed.
